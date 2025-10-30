@@ -147,7 +147,7 @@ class RegexMappingStrategy(RealmMappingStrategy):
     def resolve(self, dn):
         import re
         
-        dn_to_check = dn.lower() if self.case_insensitive else dn
+        dn_to_check = dn
         
         for realm_name, pattern in self.compiled_patterns:
             match = pattern.match(dn_to_check)
