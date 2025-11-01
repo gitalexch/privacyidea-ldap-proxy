@@ -145,7 +145,12 @@ class RegexMappingStrategy(RealmMappingStrategy):
                     pattern=pattern, error=str(e)))
 
     def resolve(self, dn):
-        import re
+        """
+        Resolve DN to realm using regex patterns.
+        
+        :param dn: Distinguished Name as string
+        :return: Deferred firing tuple (app_marker, realm_name)
+        """
         
         dn_to_check = dn
         
